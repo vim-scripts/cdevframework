@@ -1,0 +1,22 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3671
+
+With time and experience, I ended setting up vim to ease my life while developing in C++. This is the very basic version of it, and it will most probably grow with time.
+
+Usage:
+
+Run vim from within the root directory of your project ($HOME/Projects/myproject for instance). The script sets up the CTRL-W_s shortcut to ask for a source file extension as well as header file extension, then the source files base path and header files base path. From then on, each time you press the shortcut, you will be asked only for the file name you want to edit, without extension or path. It will then open them side by side. The idea is to go to the window with <CTRL-W>j and <CTRL-W>k and press <CTRL-W>_ to maximize the height.
+
+The script also adds the "globals" option to sessionoptions in order to keep the base paths and extensions for when the session is saved with:
+
+    :mksession! <filename>
+
+To reload the session, then use:
+
+    vim -S <filename>
+
+Another hint: I like having the filename list next to the source code, by doing:
+
+    :vsplit .
+    :vertical resize 32
+    :set wfw
+
